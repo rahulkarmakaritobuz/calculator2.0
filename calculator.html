@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="calculator.css"></link>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="d-flex w-100 p-3 mb-5 shadow justify-content-center"><h1>Calculator</h1></div>
+    <section class="d-flex justify-content-center text-center">
+        
+        <div class="d-flex flex-column p-2 text-center align-content-center flex-wrap fullCalculator">
+            <textarea class="d-flex m-1" id="result" placeholder="History:"></textarea>
+            <input class="d-flex m-1" type="text" class="mb-4" id="input" placeholder="Equation:">
+            
+            <table class="d-flex justify-content-center">
+
+                <tr class="tableRow0">
+                    <td class="tableRow0-col1"><button onclick="clearAll()">CE</button></td>
+                    <td class="tableRow0-col2"><button onclick="reset()">R</button></td>
+                    <td class="tableRow0-col3"><button onclick="del()">Del</button></td>
+                    <td class="tableRow0-col5"><button onclick="clearHistory()">CEH</button></td>
+                </tr>
+                <tr class="tableRow1">
+                    <td class="tableRow1-col1"><button onclick="insert('!')">!</button></td>
+                    <td class="tableRow1-col2"><button onclick="insert('^')">^</button></td>
+                    <td class="tableRow1-col-mod"><button onclick="insert('%')">Mod</button></td>
+                    <td class="tableRow1-col4"><button onclick="insert('/')">/</button></td>
+                </tr>
+                <tr class="tableRow2">
+                    <td class="tableRow1-col1"><button onclick="insert('7')">7</button></td>
+                    <td class="tableRow1-col2"><button onclick="insert('8')">8</button></td>
+                    <td class="tableRow1-col3"><button onclick="insert('9')">9</button></td>
+                    <td class="tableRow1-col4"><button onclick="insert('*')">*</button></td>
+                </tr>
+                <tr class="tableRow3">
+                    <td class="tableRow1-col1"><button onclick="insert('4')">4</button></td>
+                    <td class="tableRow1-col2"><button onclick="insert('5')">5</button></td>
+                    <td class="tableRow1-col3"><button onclick="insert('6')">6</button></td>
+                    <td class="tableRow1-col4"><button onclick="insert('-')">-</button></td>
+                </tr>
+                <tr class="tableRow4">
+                    <td class="tableRow1-col1"><button onclick="insert('1')">1</button></td>
+                    <td class="tableRow1-col2"><button onclick="insert('2')">2</button></td>
+                    <td class="tableRow1-col3"><button onclick="insert('3')">3</button></td>
+                    <td class="tableRow1-col4" rowspan="2"><button onclick="insert('+')">+</button></td>
+                </tr>
+                <tr class="tableRow5">
+                    <td class="tableRow1-col1"><button onclick="insert('0')">0</button></td>
+                    <td class="tableRow1-col2-dot"><button onclick="insert('.')">.</button></td>
+                    <td class="tableRow1-col3-equal">
+                        <button onclick="getElementById('result').value =getElementById('input').value ;getElementById('input').value=calculate(getElementById('input').value)" >=</button>
+                    </td>   
+                </tr>
+            </table>
+    
+            </div>
+        </div>
+    </section>
+
+    <script src="calculator.js"></script>
+</body>
+
+</html>
